@@ -4,8 +4,9 @@ metadata:
   name: reddit-clone-deployment
   labels:
     app: reddit-clone
+  namespace: reddit-clone-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: reddit-clone
@@ -16,6 +17,6 @@ spec:
     spec:
       containers:
       - name: reddit-clone
-        image: rohanrustagi18/redditclone
+        image: iamamash/reddit-clone:latest
         ports:
         - containerPort: 3000
